@@ -5,10 +5,12 @@ const WebpackObfuscator = require('webpack-obfuscator')
 
 const prod = {
   mode: 'production',
+  
   output: {
     filename: '[name].[contenthash].bundle.js',
     chunkFilename: '[name].[contenthash].chunk.js'
   },
+
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -18,20 +20,17 @@ const prod = {
       }
     }
   },
+
   plugins: [
-   
-
-
-
-    
     new WebpackObfuscator(
-       {
-         rotateStringArray: true,
-         stringArray: true,
-         stringArrayThreshold: 0.75
-       },
-       ['vendors.*.js', 'sw.js']
-     )
+      {
+        rotateStringArray: true,
+        stringArray: true,
+        stringArrayThreshold: 0.75
+      },
+      
+      ['vendors.*.js', 'sw.js']
+    )
   ]
 }
 

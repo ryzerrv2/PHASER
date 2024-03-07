@@ -7,9 +7,9 @@ const webpack = require('webpack')
 
 module.exports = {
   performance: { hints: false },
-   entry: {
-    index: "./src/index.ts",
-    style: "./src/style.ts",
+    entry: {
+      index: "./src/main.ts",
+      style: "./src/style.ts",
     },
   output: {
     path: path.resolve(__dirname, '../public'),
@@ -31,40 +31,40 @@ module.exports = {
       },
       
       {
-                test: /\.scss$/,
-                exclude: /(node_modules)/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: "css-loader",
-                        options: {
-                            sourceMap: true,
-                            url: false,
-                        },
-                    },
-                    {
-                        loader: "postcss-loader",
-                        options: {
-                           
-                        },
-                    },
-                    {
-                        loader: "sass-loader",
-                        options: {
-                            sourceMap: true,
-                            sassOptions: {
-                                outputStyle: "expanded",
-                            },
-                        },
-                    },
-                ],
+        test: /\.scss$/,
+        exclude: /(node_modules)/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+              url: false,
             },
-    
-    
-    ]
+          },
+          
+          {
+            loader: "postcss-loader",
+            options: {
+              
+            },
 
-    
+          },
+
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+              sassOptions: {
+                outputStyle: "expanded",
+              },
+            },
+          },
+        ],
+      },
+    ]
   },
+
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -77,52 +77,34 @@ module.exports = {
       }
     }
   },
-  plugins: [
 
-     new MiniCssExtractPlugin({
-            filename: "[name].[contenthash].css",
-            chunkFilename: "[id].css",
-     }),
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css",
+      chunkFilename: "[id].css",
+    }),
+
     new webpack.HotModuleReplacementPlugin(),
+    
     new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
+      $: "jquery",
+      jQuery: "jquery",
     }),
     
     new webpack.ProgressPlugin(),
      
-  new HtmlWebpackPlugin({
-     
+    new HtmlWebpackPlugin({ 
       filename: "index.html",
       template: 'src/index.html',
       chunks: ['vendors', 'index','style'],
-  }),
+    }),
 
-  
-  
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'src/assets', to: 'assets' },
+        { from: 'public', to: 'assets' },
         { from: 'src/pwa', to: '' },
         { from: 'src/favicon.ico', to: '' }
       ]
-    }),
-
-   /*  new WorkboxPlugin.InjectManifest({
-      swSrc: path.join(__dirname, '../src/sw.ts'),
-       swDest: 'sw.js',
-      maximumFileSizeToCacheInBytes:50000000,
-      exclude: [
-        /\.map$/,
-        /manifest$/,
-        /\.htaccess$/,
-        /service-worker\.js$/,
-        /sw\.js$/,
-      ],
-    }),
-    */
-    
-    
-
+    }),  
   ]
 }
