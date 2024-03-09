@@ -8,13 +8,13 @@ import { gameSettings } from "./consts/GameSettings"
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
   backgroundColor: gameSettings.bgColor,
-  parent: "my-game",
-  scale: {
-    mode: Phaser.Scale.FIT,
-    width: gameSettings.gameWidth,
-    height: gameSettings.gameHeight,
-  },
-
+	parent: 'my-game',
+  width: gameSettings.gameWidth,
+	height: gameSettings.gameHeight,
+	scale: {
+		mode: Phaser.Scale.RESIZE,
+		autoCenter: Phaser.Scale.CENTER_BOTH
+	},
   physics: {
     default: "arcade",
     arcade: { 

@@ -18,12 +18,17 @@ export default class Preloader extends Phaser.Scene
             TextureKeys.Logo, 
             'assets/images/logo.jpg'
         )
+		this.load.image(
+			TextureKeys.TileBackground,
+			'assets/images/png'
+		)
     }
 
     create()
     {
         // creazione di tutte le animazioni
         
+
         this.scene.stop(SceneKeys.Preloader);
         this.scene.start(SceneKeys.Game);
     }
