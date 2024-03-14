@@ -28,6 +28,7 @@ window.addEventListener("load", () => {
     title: "Phaser",
     backgroundColor: GameData.globals.bgColor,
     parent: "my-game",
+	pixelArt: true,
     scale: {
       mode: Phaser.Scale.FIT,
       width: GameData.globals.gameWidth,

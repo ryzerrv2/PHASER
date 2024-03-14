@@ -3,7 +3,8 @@
 enum TextureKeys
 {
     Logo = 'logo',
-	TileBackground = 'tileBackground',
+	tileset = 'tiles',
+	tilemap = 'map',
 }
 
 export default TextureKeys

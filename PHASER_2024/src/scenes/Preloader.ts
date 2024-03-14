@@ -19,8 +19,12 @@ export default class Preloader extends Phaser.Scene
             'assets/images/logo.jpg'
         )
 		this.load.image(
-			TextureKeys.TileBackground,
-			'assets/images/png'
+			TextureKeys.tileset, 
+			'assets/tilesets/tuxmon-sample-32px-extruded.png'
+		)
+		this.load.tilemapTiledJSON(
+			TextureKeys.tilemap,
+			'assets/tilemaps/tuxemon-town.json'
 		)
     }
 

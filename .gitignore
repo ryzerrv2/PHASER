@@ -4,11 +4,12 @@
 *.log
 
 #phaser 2023
-PHASER_2023/.vscode/
-PHASER_2023/node_modules/
-PHASER_2023/OH_NO,_I_PLAYED_AGAIN.pptx
-PHASER_2023/Oh_no__I_played_again.pdf
-PHASER_2023/package-lock.json
+PHASER_2023
+# PHASER_2023/.vscode/
+# PHASER_2023/node_modules/
+# PHASER_2023/OH_NO,_I_PLAYED_AGAIN.pptx
+# PHASER_2023/Oh_no__I_played_again.pdf
+# PHASER_2023/package-lock.json
 
 #phaser 2024
 PHASER_2024/node_modules/

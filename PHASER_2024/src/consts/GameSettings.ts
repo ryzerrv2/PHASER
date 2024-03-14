@@ -1,7 +1,7 @@
 export let gameSettings: GameSettings = {
-    gameWidth: window.innerWidth * window.devicePixelRatio,
-    gameHeight: window.innerHeight * window.devicePixelRatio,
+    gameWidth: 800,
+    gameHeight: 600,
     bgColor: "#ffffff",
-    gravity: {x: 0, y: 200},
+    gravity: {x: 0, y: 0},
     debug: true
 }
