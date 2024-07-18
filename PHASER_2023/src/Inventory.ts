@@ -16,8 +16,8 @@ export default class Inventory extends Phaser.Scene {
   }
 
   preload() {
-    var inventory = this.make.graphics({ x: 0, y: 0, add: false });
-    var book = this.make.graphics({ x: 0, y: 0, add: false });
+    var inventory = this.make.graphics({ x: 0, y: 0});
+    var book = this.make.graphics({ x: 0, y: 0});
 
     //bordo verticale
     inventory.fillStyle(0xffffff, 1);
